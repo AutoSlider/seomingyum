@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+여기는 게시판이에요!
+</h1>
+
+{% if user.is_authenticated %}
+    <a href="{% url 'common:logout' %}">{{ user.username }}님 로그아웃</a>
+{% else %}
+    <a>로그인 안됐다.</a>
+{% endif %}
+
+        <div id="signup_div">
+            <a href="{% url 'common:main' %}">
+                <button id="signup_button" type="submit" class="btn btn-secondary btn-lg">뒤로가기</button>
+            </a>
+        </div>
+
+</body>
+</html>
