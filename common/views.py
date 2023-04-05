@@ -1,6 +1,5 @@
-# from django.contrib.auth import get_user_model, login, authenticate, logout
 from django.views import generic
-from django.views.generic import TemplateView
+# from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.views import LoginView as BaseLoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -51,6 +50,7 @@ class SignupView(CreateView):
         form.save() # 회원 정보 저장
         return response
 
+# 프로필 수정
 def profile(request):
     if request.method == 'POST':
         form = ChangeForm(request.POST, instance=request.user)

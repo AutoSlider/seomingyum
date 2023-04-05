@@ -8,6 +8,7 @@ class SignupForm(UserCreationForm):
         model=CustomUser
         fields= ['username', 'password1', 'password2', 'nickname', 'phone', 'email']
 
+
 class ChangeForm(UserChangeForm):
 # 회원 정보 수정
     nickname = forms.CharField(max_length=20)
