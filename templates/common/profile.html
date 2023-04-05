@@ -2,61 +2,63 @@
 {% load static %}
 {% block content %}
 <style>
-    #login_div {
+    #login_div2 {
         width:200px;
         position:relative;
         left: 80px;
+
     }
-    #pre_div {
+    #pre_div2 {
         width:200px;
         position:relative;
         left: 230px;
         bottom:48px;
+
     }
 </style>
-<div class="profile container-fluid">
-    <h1 class="logo">
+<div id="profile_container" class="profile container-fluid" style="position:relative; top:100px;">
+    <h1 id="logo" class="logo" style="position:relative; bottom:200px;" >
         <a href="{% url 'common:login' %}"><img id="logo_img" src="{% static 'img/logo3.png' %}" class="img-fluid"></a>
     </h1>
-    <div class="profile_content ">
+    <div class="profile_content">
         <form method="post" action="{% url 'common:profile' %}" id="profile_form">
     {% csrf_token %}
         {% if new_password1 != new_password2 %}
             <div class="text-bg-warning p-3" onclick="validchk()">"새 비밀번호"와 "새 비밀번호(확인)"이 일치하지 않습니다.</div>
         {% endif %}
-        <div class="input-group mb-3">
+        <div class="input-group mb-4">
             <span class="input-group-text" id="username">아이디</span>
             <input name="username" type="text" class="form-control" value="{{ user.username }}" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-4">
             <span class="input-group-text" id="phone">핸드폰</span>
             <input name="phone" type="text" class="form-control" value="{{ user.phone }}" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-4">
             <span class="input-group-text" id="email">이메일</span>
             <input name="email" type="text" class="form-control" value="{{ user.email }}" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-4">
             <span class="input-group-text" id="nickname">닉네임</span>
             <input  name="nickname" type="text" class="form-control" value="{{ user.nickname }}" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-4">
             <span class="input-group-text" id="old_password">기존 비밀번호</span>
             <input name="old_password" type="password" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-4">
             <span class="input-group-text" id="new_password1">새 비밀번호</span>
             <input name="new_password1" type="password" class="form-control" aria-label="new_password1" aria-describedby="basic-addon1">
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-4">
             <span class="input-group-text" id="new_password2">새 비밀번호(확인)</span>
             <input name="new_password2" type="password" class="form-control" aria-label="new_password2" aria-describedby="basic-addon1">
         </div>
         </form>
-        <div id="login_div">
+        <div id="login_div2">
             <button type="submit" form="profile_form" class="btn btn-secondary btn-lg">변경하기</button>
         </div>
-        <div id="pre_div">
+        <div id="pre_div2">
             <button onclick="window.location.href='{% url 'boards:board_list' %}'" type="button" class="btn btn-secondary btn-lg">이전으로</button>
         </div>
     </div>
