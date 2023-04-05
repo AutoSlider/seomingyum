@@ -2,25 +2,13 @@
 {% load static %}
 {% block content %}
 <style>
-    #login_div2 {
-        width:200px;
-        position:relative;
-        left: 80px;
 
-    }
-    #pre_div2 {
-        width:200px;
-        position:relative;
-        left: 230px;
-        bottom:48px;
-
-    }
 </style>
-<div id="profile_container" class="profile container-fluid" style="position:relative; top:100px;">
-    <h1 id="logo" class="logo" style="position:relative; bottom:200px;" >
+<div id="profile_container" class="profile container-fluid">
+    <h1 id="profile_logo" class="logo">
         <a href="{% url 'common:login' %}"><img id="logo_img" src="{% static 'img/logo3.png' %}" class="img-fluid"></a>
     </h1>
-    <div class="profile_content">
+    <div id="profile_content" class="profile_content">
         <form method="post" action="{% url 'common:profile' %}" id="profile_form">
     {% csrf_token %}
         {% if new_password1 != new_password2 %}
@@ -55,10 +43,10 @@
             <input name="new_password2" type="password" class="form-control" aria-label="new_password2" aria-describedby="basic-addon1">
         </div>
         </form>
-        <div id="login_div2">
+        <div id="profile_div">
             <button type="submit" form="profile_form" class="btn btn-secondary btn-lg">변경하기</button>
         </div>
-        <div id="pre_div2">
+        <div id="pre_div">
             <button onclick="window.location.href='{% url 'boards:board_list' %}'" type="button" class="btn btn-secondary btn-lg">이전으로</button>
         </div>
     </div>

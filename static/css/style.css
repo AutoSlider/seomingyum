@@ -34,12 +34,15 @@
 #login_button {
     display:inline-block;
     position:relative;
-    left:220px;
-    top:165px;
+    right:70px;
+    top:250px;
 }
 
 #signup_div {
     text-align:center;
+    position:relative;
+    left:50px;
+    top:2px;
 }
 
 #signup_button {
@@ -64,8 +67,43 @@
 #init_div {
     text-align:center;
     position:relative;
-    top:200px;
+    top:250px;
 }
+
+
+
+
+/* 프로필화면 스타일 시트 */
+    #profile_div {
+        width:200px;
+        position:relative;
+        left: 80px;
+
+    }
+    #pre_div {
+        width:200px;
+        position:relative;
+        left: 230px;
+        bottom:48px;
+
+    }
+
+    #profile_container {
+        position:relative;
+        top:100px;
+        height:350px;
+    }
+
+    #profile_logo {
+        position:relative;
+        bottom:300px;
+    }
+
+    #profile_content {
+        position:relative;
+        bottom:100px;
+    }
+
 
 
 

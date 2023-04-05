@@ -23,9 +23,12 @@
                 <span class="input-group-text">비밀번호</span>
                 <input type="password"  name="password" class="form-control" placeholder="password" required>
             </div>
+            {% if user.is_authenticated %}
+            {% else %}
             <div id="login_div">
                 <button id="login_button"type="submit" class="btn btn-secondary btn-lg">로그인</button>
             </div>
+            {% endif %}
         </form>
 
 <!-- 회원가입 버튼 -->
